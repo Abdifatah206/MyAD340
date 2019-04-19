@@ -2,17 +2,99 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    tools:context=".MainActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Professor: Brenden West \n Course: Mobile Applicaiton\n Program: AD\n Std_Name: Abdifatah Mohamed\n StudentID:*******!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="ondisplaymessage"
+        android:text="Send"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt"
+        app:layout_constraintStart_toEndOf="@+id/txt" />
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="302dp"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="80dp">
+
+    </android.support.v7.widget.GridLayout>
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="302dp"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="80dp">
+
+    </android.support.v7.widget.GridLayout>
+
+    <Button
+        android:id="@+id/toast1"
+        android:layout_width="154dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="107dp"
+        android:onClick="toast1"
+        android:text="East"
+        app:layout_constraintBaseline_toBaselineOf="@+id/toast2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt" />
+
+    <Button
+        android:id="@+id/toast3"
+        android:layout_width="148dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="toast3"
+        android:text="North"
+        app:layout_constraintBaseline_toBaselineOf="@+id/toast4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/toast2"
+        android:layout_width="131dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="toast2"
+        android:text="South"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt" />
+
+    <Button
+        android:id="@+id/toast4"
+        android:layout_width="141dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="toast4"
+        android:text="West"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toast2" />
 
 </android.support.constraint.ConstraintLayout>
