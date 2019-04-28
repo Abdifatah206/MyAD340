@@ -6,6 +6,9 @@
     android:layout_height="wrap_content"
     android:visibility="visible"
     tools:context=".MainActivity" >
+    android:background="#ffffff"
+
+
 
     <EditText
         android:id="@+id/txt"
@@ -26,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:onClick="ondisplaymessage"
+        android:onClick="sendmessage"
         android:text="Send"
         app:layout_constraintBaseline_toBaselineOf="@+id/txt"
         app:layout_constraintStart_toEndOf="@+id/txt" />
@@ -36,7 +39,8 @@
         android:layout_width="302dp"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="80dp">
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints">
 
     </android.support.v7.widget.GridLayout>
 
@@ -45,56 +49,76 @@
         android:layout_width="302dp"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="80dp">
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints">
+
 
     </android.support.v7.widget.GridLayout>
 
     <Button
-        android:id="@+id/toast1"
-        android:layout_width="154dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="107dp"
-        android:onClick="toast1"
-        android:text="East"
-        app:layout_constraintBaseline_toBaselineOf="@+id/toast2"
+        android:id="@+id/east"
+        android:layout_width="145dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="104dp"
+        android:layout_weight="1"
+        android:background="#8c96ff"
+
+        android:fontFamily="Times New Roman"
+
+        android:text="east"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/south"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <Button
-        android:id="@+id/toast3"
-        android:layout_width="148dp"
-        android:layout_height="72dp"
+        android:id="@+id/north"
+        android:layout_width="143dp"
+        android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:onClick="toast3"
-        android:text="North"
-        app:layout_constraintBaseline_toBaselineOf="@+id/toast4"
+        android:layout_weight="1"
+        android:background="#8c96ff"
+
+        android:fontFamily="Times New Roman"
+        android:onClick="south"
+        android:text="south"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/west"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/toast2"
-        android:layout_width="131dp"
+        android:id="@+id/south"
+        android:layout_width="137dp"
+        android:layout_weight="1"
         android:layout_height="77dp"
         android:layout_marginTop="107dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:onClick="toast2"
-        android:text="South"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#8c96ff"
+
+        android:onClick="west"
+        android:text="west"
+        android:fontFamily="Times New Roman"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <Button
-        android:id="@+id/toast4"
-        android:layout_width="141dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:onClick="toast4"
-        android:text="West"
+        android:id="@+id/west"
+        android:layout_width="144dp"
+        android:layout_weight="1"
+        android:layout_height="75dp"
+        android:layout_marginTop="104dp"
+        android:background="#8c96ff"
+
+        android:onClick="north"
+        android:text="north"
+        android:fontFamily="Times New Roman"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toast2" />
+        app:layout_constraintTop_toBottomOf="@+id/south" />
 
 </android.support.constraint.ConstraintLayout>
