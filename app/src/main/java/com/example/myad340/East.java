@@ -68,9 +68,10 @@ public class East extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),detail.class);
                 intent.putExtra("titles",movies[position][0]);
-                intent.putExtra("name",movies[position][1]);
-                intent.putExtra("name",movies[position][2]);
-                //intent.putExtra("image",movies[position][3]);
+                intent.putExtra("year",movies[position][1]);
+                intent.putExtra("director",movies[position][2]);
+                intent.putExtra("image",movies[position][3]);
+                intent.putExtra("Description",movies[position][3]);
                 startActivity(intent);
 
                 // Creating Bundle object
