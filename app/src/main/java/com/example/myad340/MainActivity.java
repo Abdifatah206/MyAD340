@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     Button south;
     Button north;
     Button roadbtn;
-    String mystring = "welcome North";
-    EditText edit;
+    Button mapbtn;
+        EditText edit;
     //Menu menu;
     public void init() {
         btn = (Button) findViewById(R.id.btn);
@@ -65,13 +65,27 @@ public class MainActivity extends AppCompatActivity {
         roadbtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent E = new Intent(MainActivity.this, traffic_camera.class);
+                Intent b = new Intent(MainActivity.this, traffic_camera.class);
 
-                startActivity(E);
+                startActivity(b);
             }
 
         });
     }
+    /**** map  intent
+    public void mapss() {
+        mapbtn = (Button) findViewById(R.id.map);
+        roadbtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent m = new Intent(MainActivity.this, map.class);
+
+                startActivity(m);
+            }
+
+        });
+    }
+     */
     /*
     public void road1() {
         menu = (Menu) findViewById(R.id.item1);
@@ -95,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         init();
         east1();
         road();
+       // mapss();
 
 
 

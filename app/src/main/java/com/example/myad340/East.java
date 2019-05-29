@@ -106,29 +106,9 @@ public class East extends AppCompatActivity {
             TextView director = (TextView) rowView.findViewById(R.id.moviedirector);
             director.setText(values[position][2]);
             ImageView movieImage = (ImageView) rowView.findViewById(R.id.movieImage);
-            //String url = getItem(values[position][2]);
-            //String url = getItem(values[position][2]);
             Picasso.get().load(values[position][3]).into(movieImage);
 
 
-
-
-
-
-
-
-
-
-
-
-            //change the icon for Windows and iPhone
-            //String s = String.valueOf(values[position]);
-            //if (s.startsWith("Windows7") || s.startsWith("iPhone")
-              //      || s.startsWith("Solaris")) {
-                //movieImage.setImageResource(R.drawable.no);
-            //} else {
-            //    movieImage.setImageResource(R.drawable.ok);
-            //}
 
             return rowView;
 

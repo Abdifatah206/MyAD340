@@ -10,9 +10,9 @@ import java.lang.reflect.Array;
 
 
 public class detail extends AppCompatActivity {
- TextView titles;
- TextView years;
- TextView directors;
+ //TextView titles;
+ //TextView years;
+ //TextView directors;
 
  //ImageView image;
 
@@ -20,25 +20,20 @@ public class detail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        titles = findViewById(R.id.d_title);
-        years = findViewById(R.id.d_year);
-        directors = findViewById(R.id.d_director);
+        //titles = findViewById(R.id.d_title);
+
+        //years = findViewById(R.id.d_year);
+        //directors = findViewById(R.id.d_director);
         //image = findViewById(R.id.d_image);
         Intent intent = getIntent();
-        titles.setText(intent.getStringExtra("titles"));
-        years.setText(intent.getStringExtra("years"));
-        directors.setText(intent.getStringExtra("directors"));
-        //image.setImageResource(intent.getIntExtra("image", 0));
+        Bundle bundle = getIntent().getExtras();
+        String title = bundle.getString("title");
+        TextView titles = (TextView)findViewById(R.id.d_title);
+        titles.setText(title);
 
-
-       // String value = getIntent().getExtras().getString(movies);
-
-       // textView =(TextView) findViewById(R.id.textitem);
-
-       //String tempholder = getIntent().getStringExtra("movies");
-       //textView.setText(tempholder);
-        //Bundle bundle = getIntent().getExtras();
-        //String data = bundle.getString("movies");
+        //titles.setText(intent.getStringExtra("titles"));
+        //years.setText(intent.getStringExtra("years"));
+        //directors.setText(intent.getStringExtra("directors"));
 
 
     }
