@@ -7,6 +7,10 @@
     android:background="#DFF9FC"
     tools:context=".detail">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <ImageView
         android:id="@+id/d_image"
         android:layout_width="370dp"
@@ -14,12 +18,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="0dp"
         android:layout_marginEnd="33dp"
         android:layout_marginRight="33dp"
         android:padding="1dp"
         android:textAlignment="center"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="55dp"/>
 
     <TextView
         android:id="@+id/d_title"

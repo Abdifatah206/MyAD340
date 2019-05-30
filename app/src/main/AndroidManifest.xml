@@ -20,6 +20,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".AboutActivity"
             android:label="About"
@@ -28,6 +29,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
+
+        <activity
+            android:name=".East"
+            android:label="Zombie Movies"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity
+            android:name=".detail"
+            android:label="Zombie Movie Details"
+            android:parentActivityName=".East">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".East"/>
+        </activity>
+
         <activity
             android:name=".TrafficCamera"
             android:label="Traffic Map"
@@ -36,12 +56,7 @@
             android:name=".traffic_camera"
             android:label="Traffic Cameras"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".detail"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".East"
-            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".screen2"
             android:parentActivityName=".MainActivity" />

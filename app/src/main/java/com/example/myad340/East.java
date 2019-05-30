@@ -2,6 +2,7 @@ package com.example.myad340;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -48,6 +49,10 @@ public class East extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.east);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar ab = getSupportActionBar();
+        ((ActionBar) ab).setDisplayHomeAsUpEnabled(true);
 
         //listdetail();
         listView = (ListView) findViewById(R.id.movie_list);
