@@ -9,7 +9,7 @@
 
     <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4"/>
+        android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4" />
 
     <application
         android:allowBackup="true"
@@ -20,9 +20,18 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TrafficCamera"
+        <activity
+            android:name=".AboutActivity"
+            android:label="About"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity
+            android:name=".TrafficCamera"
             android:label="Traffic Map"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".traffic_camera"
             android:label="Traffic Cameras"
@@ -36,7 +45,9 @@
         <activity
             android:name=".screen2"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="My AD340 Project">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
