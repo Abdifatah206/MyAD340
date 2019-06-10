@@ -73,34 +73,21 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-    /**** map  intent
+    /**** map  intent ***/
     public void mapss() {
-        mapbtn = (Button) findViewById(R.id.map);
-        roadbtn.setOnClickListener(new OnClickListener() {
+        mapbtn = (Button) findViewById(R.id.loc);
+        mapbtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(MainActivity.this, map.class);
+                Intent m = new Intent(MainActivity.this, TrafficMap.class);
 
                 startActivity(m);
             }
 
         });
     }
-     */
-    /*
-    public void road1() {
-        menu = (Menu) findViewById(R.id.item1);
-        roadbtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent E = new Intent(MainActivity.this, traffic_camera.class);
 
-                startActivity(E);
-            }
 
-        });
-    }
-*/
 
 
 
@@ -114,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         init();
         east1();
         road();
-       // mapss();
+       mapss();
     }
 
     @Override

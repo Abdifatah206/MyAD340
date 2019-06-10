@@ -7,10 +7,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,34 +16,44 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".tests"></activity>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4" />
+
+        <activity
+            android:name=".TrafficMap"
+            android:label="locations"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".AboutActivity"
             android:label="About"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".East"
             android:label="Zombie Movies"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".detail"
             android:label="Zombie Movie Details"
             android:parentActivityName=".East">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".East"/>
+                android:value=".East" />
         </activity>
-
         <activity
             android:name=".TrafficCamera"
             android:label="Traffic Map"
@@ -56,7 +62,6 @@
             android:name=".traffic_camera"
             android:label="Traffic Cameras"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".screen2"
             android:parentActivityName=".MainActivity" />
