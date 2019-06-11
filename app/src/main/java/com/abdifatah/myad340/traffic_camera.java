@@ -1,4 +1,4 @@
-package com.example.myad340;
+package com.abdifatah.myad340;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -31,13 +31,7 @@ import org.json.JSONObject;
 import org.json.JSONException;
 
 
-
-
-
-
-
-
-
+import com.example.myad340.R;
 import com.squareup.picasso.Picasso;
 
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context="com.abdifatah.myad340.MainActivity">
 
     <include
         android:id="@+id/toolbar"

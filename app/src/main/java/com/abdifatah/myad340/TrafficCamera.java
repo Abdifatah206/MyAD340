@@ -1,4 +1,4 @@
-package com.example.myad340;
+package com.abdifatah.myad340;
 
 public class TrafficCamera {
     String label;

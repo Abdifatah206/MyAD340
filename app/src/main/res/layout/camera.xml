@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".traffic_camera">
+    tools:context="com.abdifatah.myad340.traffic_camera">
 
     <ListView
         android:id="@+id/camera_list"

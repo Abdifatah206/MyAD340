@@ -1,5 +1,4 @@
-package com.example.myad340;
-
+package com.abdifatah.myad340;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.myad340.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -20,13 +20,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.Date;
 
+public class TeamActivity extends AppCompatActivity {
 
-public class screen2 extends AppCompatActivity {
-    private static final String TAG = screen2.class.getSimpleName();
+    private static final String TAG = TeamActivity.class.getSimpleName();
 
     private DatabaseReference myRef;
 
@@ -34,15 +33,23 @@ public class screen2 extends AppCompatActivity {
     UserListAdapter listAdapter;
     ArrayList<User> userData = new ArrayList<>();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_screen2);
+        setContentView(R.layout.activity_team);
+
+        String teamUser = getIntent().getStringExtra("xUser");
+
+        String teamPass = getIntent().getStringExtra("xPass");
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
+
 
         userList = findViewById(R.id.userList);
         listAdapter = new UserListAdapter(this, userData);
@@ -52,6 +59,19 @@ public class screen2 extends AppCompatActivity {
         myRef = mDatabase.getReference("users");
 
         // update database
+
+        Log.d("myTag", "TTTEEAAAAAAAAAAAMMMMMMMMMMMMMMMM");
+        Log.d("myTag", ">>>>>>>>>  " +  " <<<<<<<<<");
+        Log.d("myTag", ">>>>>>>>>  " + currentUser.toString() + " <<<<<<<<<");
+        Log.d("myTag", ">>>>>>>>>  " + " <<<<<<<<<");
+        Log.d("myTag", ">>>>>>>>>  " + " <<<<<<<<<");
+        Log.d("myTag", "TTTTTTTTTTTTTTTEEEEEEEAAAAAAAMMMMMMMMM<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+
+
+
+
+
+
         writeNewUser(currentUser.getUid(), currentUser.getDisplayName(), currentUser.getEmail());
 
         // get list of users
@@ -78,6 +98,7 @@ public class screen2 extends AppCompatActivity {
         });
 
     }
+
     private void writeNewUser(String userId, String name, String email) {
         User user = new User(name, email, new Date().toString());
         myRef.child(userId).setValue(user);
@@ -124,7 +145,8 @@ public class screen2 extends AppCompatActivity {
 
             return rowView;
         }
-    }
 
+
+    }
 
 }

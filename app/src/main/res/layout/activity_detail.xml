@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DFF9FC"
-    tools:context=".detail">
+    tools:context="com.abdifatah.myad340.detail">
 
     <include
         android:id="@+id/toolbar"
