@@ -21,7 +21,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.myad340.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -51,11 +50,6 @@ public class TrafficMap extends AppCompatActivity
     protected TextView mLocationText;
 
     List<TrafficCamera> cameraData = new ArrayList<>();
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,32 +96,33 @@ public class TrafficMap extends AppCompatActivity
             }
         }
 
-/*
+
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int grantResults){
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults){
         Log.d("Location","onRequestPermissionsResults");
         switch (requestCode){
             case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
-                if(grantResults.length > 0
-                        && grantResults(0) == PackageManager.PERMISSION_GRANTED){
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     updateUI();
                 }else {
 
                 }
+                return;
             }
         }
     };
-*/
 
+        @Override
         public void onMapReady(GoogleMap googleMap) {
-
+            mMap = googleMap;
 
         // Add a marker in Sydney, Australia,
         // and move the map's camera to the same location.
-        LatLng sydney = new LatLng(47.6205, -122.3493);
-        googleMap.addMarker(new MarkerOptions().position(sydney)
-                .title("space needle"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        LatLng sydney = new LatLng(47.6062, -122.3321);
+//        mMap.addMarker(new MarkerOptions().position(sydney)
+//                .title("space needle"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     };
 
         public void loadcameradata(String dataUrl){
@@ -171,28 +166,22 @@ public class TrafficMap extends AppCompatActivity
             queue.add(jsonReq);
         };
 
-        public void updateUI(){
-        if(mLastLocation == null){
-            //
-        }else{
-            //if(mAddressRequested){
-             //   Starting onService();
-
-            }
-            LatLng myLocation = new LatLng(mLastLocation.getAltitude(), mLastLocation.getLongitude());
-            mMap.setMinZoomPreference(12);
-            mMap.addMarker(new MarkerOptions().position(myLocation)
+        public void updateUI() {
+            if (mLastLocation == null) {
+                //
+            } else {
+                LatLng myLocation = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+                mMap.setMinZoomPreference(12);
+                mMap.addMarker(new MarkerOptions().position(myLocation)
                         .title(" my current location")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
 
-        };
-
-
-
-        public void showmarkers(){
+            }
+        }
 
 
-    };
+        public void showmarkers() {}
+
 }
 

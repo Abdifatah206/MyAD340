@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myad340">
+    package="com.abdifatah.myad340">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,55 +16,54 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.abdifatah.myad340.sign"></activity>
-        <activity android:name="com.abdifatah.myad340.tests" />
+        <activity android:name=".sign"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4" />
+            android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4"/>
 
         <activity
-            android:name="com.abdifatah.myad340.TrafficMap"
+            android:name=".TrafficMap"
             android:label="locations"
-            android:parentActivityName="com.abdifatah.myad340.MainActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.abdifatah.myad340.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name="com.abdifatah.myad340.AboutActivity"
+            android:name=".AboutActivity"
             android:label="About"
-            android:parentActivityName="com.abdifatah.myad340.MainActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.abdifatah.myad340.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name="com.abdifatah.myad340.East"
+            android:name=".East"
             android:label="Zombie Movies"
-            android:parentActivityName="com.abdifatah.myad340.MainActivity">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.abdifatah.myad340.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name="com.abdifatah.myad340.detail"
+            android:name=".detail"
             android:label="Zombie Movie Details"
-            android:parentActivityName="com.abdifatah.myad340.East">
+            android:parentActivityName=".East">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.abdifatah.myad340.East" />
+                android:value=".East" />
         </activity>
         <activity
-            android:name="com.abdifatah.myad340.TrafficCamera"
+            android:name=".TrafficCamera"
             android:label="Traffic Map"
-            android:parentActivityName="com.abdifatah.myad340.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name="com.abdifatah.myad340.traffic_camera"
+            android:name=".traffic_camera"
             android:label="Traffic Cameras"
-            android:parentActivityName="com.abdifatah.myad340.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name="com.abdifatah.myad340.MainActivity"
+            android:name=".MainActivity"
             android:label="My AD340 Project">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

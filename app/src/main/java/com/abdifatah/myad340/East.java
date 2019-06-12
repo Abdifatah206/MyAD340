@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.myad340.R;
 import com.squareup.picasso.Picasso;
 
 
