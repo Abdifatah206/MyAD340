@@ -56,14 +56,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
 
-import com.example.myad340.R;
-
 import static android.view.View.*;
 
 import android.content.SharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
-   private  SharedPreferencesHelper mSharedPreferencesHelper;
+//   private  SharedPreferencesHelper mSharedPreferencesHelper;
     private SharedPreferences mSharedPreferences;
 
 
@@ -153,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         road();
        mapss();
         mSharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
-       mSharedPreferencesHelper = new SharedPreferencesHelper(mSharedPreferences);
+//       mSharedPreferencesHelper = new SharedPreferencesHelper(mSharedPreferences);
 
 
         b1 = (Button)findViewById(R.id.btn);
@@ -166,7 +164,8 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                signIn();
+/*
                 if(firstValidate()) {
 
 
@@ -204,6 +203,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
+
+ */
             }
         });
 
@@ -254,7 +255,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void signIn() {
 
-        mAuth.signInWithEmailAndPassword("shire2567@gmail.com","banana44")
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth.signInWithEmailAndPassword("brenden.west@seattlecolleges.edu","androidrules")
                 .addOnCompleteListener(this, new
                         OnCompleteListener<AuthResult>() {
                             @Override

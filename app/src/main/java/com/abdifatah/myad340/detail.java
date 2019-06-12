@@ -8,8 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.myad340.R;
-
 import java.lang.reflect.Array;
 
 
