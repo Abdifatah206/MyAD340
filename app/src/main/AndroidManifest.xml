@@ -16,11 +16,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".sign"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4"/>
+            android:value="AIzaSyCNaBtYnoSuBvswBuMwrnjRD-T7ZW2Z6W4" />
 
         <activity
             android:name=".TrafficMap"
@@ -54,6 +53,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".East" />
         </activity>
+        <activity
+            android:name=".TeamActivity"
+            android:label="TeamActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TrafficCamera"
             android:label="Traffic Map"

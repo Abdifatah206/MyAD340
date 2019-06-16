@@ -1,17 +1,6 @@
 package com.abdifatah.myad340;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
@@ -20,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -47,6 +37,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,14 +46,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
-
-import static android.view.View.*;
-
-import android.content.SharedPreferences;
-
 public class MainActivity extends AppCompatActivity {
-//   private  SharedPreferencesHelper mSharedPreferencesHelper;
+    private SharedPreferencesHelper mSharedPreferencesHelper;
     private SharedPreferences mSharedPreferences;
+
 
 
 
@@ -73,32 +60,50 @@ public class MainActivity extends AppCompatActivity {
     Button north;
     Button roadbtn;
     Button mapbtn;
+
+
+
+
+
+    //Button b1;
+    EditText ed1,ed2,ed4;
+    TextView tx1;
     int counter = 3;
-    EditText ed1, ed2, ed4;
 
     String theUser;
     String thePass;
+
     private static final String TAG = "";
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+
+
+
     //Menu menu;
+
     public void init() {
         b1 = (Button) findViewById(R.id.btn);
-        b1.setOnClickListener(new OnClickListener() {
+        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent welcome = new Intent(MainActivity.this, sign.class);
+                Intent welcome = new Intent(MainActivity.this, TeamActivity.class);
 
                 startActivity(welcome);
             }
 
         });
     }
+
+
+
+
+
+/********************************* mine ***************************/
     public void east1() {
         east = (Button) findViewById(R.id.east);
-        east.setOnClickListener(new OnClickListener() {
+        east.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent E = new Intent(MainActivity.this, East.class);
@@ -110,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void road() {
         roadbtn = (Button) findViewById(R.id.camers);
-        roadbtn.setOnClickListener(new OnClickListener() {
+        roadbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent b = new Intent(MainActivity.this, traffic_camera.class);
@@ -123,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     /**** map  intent ***/
     public void mapss() {
         mapbtn = (Button) findViewById(R.id.loc);
-        mapbtn.setOnClickListener(new OnClickListener() {
+        mapbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent m = new Intent(MainActivity.this, TrafficMap.class);
@@ -132,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        /***************************************mine**********************/
+
     }
 
 
@@ -142,6 +149,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /***************************************mine**********************/
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -150,27 +159,34 @@ public class MainActivity extends AppCompatActivity {
         east1();
         road();
        mapss();
+        /***************************************mine**********************/
+
+
+
+
+
+
+
         mSharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
-//       mSharedPreferencesHelper = new SharedPreferencesHelper(mSharedPreferences);
+        mSharedPreferencesHelper = new SharedPreferencesHelper(mSharedPreferences);
 
 
         b1 = (Button)findViewById(R.id.btn);
         ed1 = (EditText)findViewById(R.id.names);
-        ed2 = (EditText)findViewById(R.id.password);
-        ed4 = (EditText)findViewById(R.id.email);
+        ed2 = (EditText)findViewById(R.id.email);
+        ed4 = (EditText)findViewById(R.id.password);
 
 
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn();
-/*
+
                 if(firstValidate()) {
 
 
 
-                    if (ed1.getText().toString().equals("abdi") &&
+                    if (ed1.getText().toString().equals("captain") &&
                             ed2.getText().toString().equals("banana")) {
                         Toast.makeText(getApplicationContext(),
                                 "Redirecting...", Toast.LENGTH_SHORT).show();
@@ -178,10 +194,10 @@ public class MainActivity extends AppCompatActivity {
                         SharedPreferences settings = getSharedPreferences("myPrefs", 0);
                         SharedPreferences.Editor editor = settings.edit();
                         //   editor.putBoolean("silentMode", mSilentMode);
-                        String abdiUser = "abdifatah.mohamed@seattlecolleges.edu";
-                        String abdiPass = "banana";
-                        editor.putString("AUser", abdiUser);
-                        editor.putString("APass", abdiPass);
+                        String capUser = "abdifatah.mohamed@seattlecolleges.edu";
+                        String capPass = "tangerine";
+                        editor.putString("capUser", capUser);
+                        editor.putString("capPass", capPass);
                         editor.commit();
 
 
@@ -203,18 +219,10 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
-
- */
             }
         });
 
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.app_menu, menu);
-        return true;
     }
 
 
@@ -255,8 +263,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void signIn() {
 
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword("brenden.west@seattlecolleges.edu","androidrules")
+        mAuth.signInWithEmailAndPassword("abdifatah.mohamed@seattlecolleges.edu","tangerine")
                 .addOnCompleteListener(this, new
                         OnCompleteListener<AuthResult>() {
                             @Override
@@ -270,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
                                             FirebaseAuth.getInstance().getCurrentUser();
                                     UserProfileChangeRequest profileUpdates = new
                                             UserProfileChangeRequest.Builder()
-                                            .setDisplayName("value")
+                                            .setDisplayName("Captain")
                                             .build();
                                     user.updateProfile(profileUpdates)
                                             .addOnCompleteListener(new
@@ -299,6 +306,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+    /***************************************mine**********************/
+    /***************************************mine**********************/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.app_menu, menu);
+        return true;
+    }
+    /***************************************mine**********************/
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -312,26 +332,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
-    /** Called when the user taps the Send button */
-
-
-
-
-        //edit = (EditText) findViewById(R.id.txt);
-       // String message = edit.getText().toString();
-       // Toast.makeText(MainActivity.this,message, Toast.LENGTH_LONG).show();
-
-        // Do something in response to button
-
-
-
-
-
-
-
-/*
+    /*
     public void east(View view) {
 
         Toast.makeText(MainActivity.this,"H E L L O  E A S T", Toast.LENGTH_LONG).show();
@@ -359,4 +360,20 @@ public class MainActivity extends AppCompatActivity {
 
         // Do something in response to button
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
